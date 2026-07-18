@@ -1,0 +1,237 @@
+INFO:     Started server process [27324]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:59841 - "GET /api/v1/utils/health-check/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59863 - "POST /api/v1/login/access-token HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:59873 - "GET /api/v1/openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59918 - "POST /api/v1/login/access-token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60068 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60068 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60099 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60099 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60102 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60102 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60069 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60069 - "GET /api/v1/openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60072 - "POST /api/v1/utils/test-email/?email_to=222%40111.com HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:58592 - "GET /api/v1/utils/health-check/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58613 - "GET /api/v1/utils/health-check/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58653 - "GET /api/v1/utils/health-check/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58801 - "GET /api/v1/utils/health-check/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58833 - "GET /api/v1/utils/health-check/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58921 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58921 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58932 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58933 - "GET /api/v1/openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58935 - "GET /api/v1/openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58935 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62034 - "POST /api/v1/login/test-token HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:62065 - "GET /api/v1/utils/health-check/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60972 - "POST /api/v1/login/test-token HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:61372 - "POST /api/v1/login/access-token HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "D:\dev\Python\Python314\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\dev\Python\Python314\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dev\Python\Python314\Lib\site-packages\psycopg\cursor.py", line 117, in execute
+    raise ex.with_traceback(None)
+psycopg.OperationalError: consuming input failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\dev\Python\Python314\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 421, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\dev\Python\Python314\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 63, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dev\Python\Python314\Lib\site-packages\fastapi\applications.py", line 1163, in __call__
+    await super().__call__(scope, receive, send)
+  File "D:\dev\Python\Python314\Lib\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\dev\Python\Python314\Lib\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "D:\dev\Python\Python314\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "D:\dev\Python\Python314\Lib\site-packages\starlette\middleware\cors.py", line 88, in __call__
+    await self.app(scope, receive, send)
+  File "D:\dev\Python\Python314\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "D:\dev\Python\Python314\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\dev\Python\Python314\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\dev\Python\Python314\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "D:\dev\Python\Python314\Lib\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "D:\dev\Python\Python314\Lib\site-packages\fastapi\routing.py", line 2685, in app
+    await route.handle(scope, receive, send)
+  File "D:\dev\Python\Python314\Lib\site-packages\fastapi\routing.py", line 1766, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\dev\Python\Python314\Lib\site-packages\fastapi\routing.py", line 2740, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\dev\Python\Python314\Lib\site-packages\fastapi\routing.py", line 1777, in _handle_selected
+    await route.handle(scope, receive, send)
+  File "D:\dev\Python\Python314\Lib\site-packages\fastapi\routing.py", line 1766, in handle
+    await self.original_router.handle(scope, receive, send)
+  File "D:\dev\Python\Python314\Lib\site-packages\fastapi\routing.py", line 2740, in handle
+    await included_router._handle_selected(scope, receive, send)
+  File "D:\dev\Python\Python314\Lib\site-packages\fastapi\routing.py", line 1786, in _handle_selected
+    await original_route.handle(scope, receive, send)
+  File "D:\dev\Python\Python314\Lib\site-packages\fastapi\routing.py", line 1265, in handle
+    await app(scope, receive, send)
+  File "D:\dev\Python\Python314\Lib\site-packages\fastapi\routing.py", line 151, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "D:\dev\Python\Python314\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "D:\dev\Python\Python314\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "D:\dev\Python\Python314\Lib\site-packages\fastapi\routing.py", line 137, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "D:\dev\Python\Python314\Lib\site-packages\fastapi\routing.py", line 691, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "D:\dev\Python\Python314\Lib\site-packages\fastapi\routing.py", line 347, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dev\Python\Python314\Lib\site-packages\starlette\concurrency.py", line 34, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dev\Python\Python314\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\dev\Python\Python314\Lib\site-packages\anyio\_backends\_asyncio.py", line 2518, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "D:\dev\Python\Python314\Lib\site-packages\anyio\_backends\_asyncio.py", line 1002, in run
+    result = context.run(func, *args)
+  File "e:\cywork\github\PythonWeb\app\api\routes\login.py", line 30, in login_access_token
+    user = crud.authenticate(
+        session=session, email=form_data.username, password=form_data.password
+    )
+  File "e:\cywork\github\PythonWeb\app\crud.py", line 45, in authenticate
+    db_user = get_user_by_email(session=session, email=email)
+  File "e:\cywork\github\PythonWeb\app\crud.py", line 36, in get_user_by_email
+    session_user = session.exec(statement).first()
+                   ~~~~~~~~~~~~^^^^^^^^^^^
+  File "D:\dev\Python\Python314\Lib\site-packages\sqlmodel\orm\session.py", line 75, in exec
+    results = super().execute(
+        statement,
+    ...<4 lines>...
+        _add_event=_add_event,
+    )
+  File "D:\dev\Python\Python314\Lib\site-packages\sqlalchemy\orm\session.py", line 2373, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\dev\Python\Python314\Lib\site-packages\sqlalchemy\orm\session.py", line 2271, in _execute_internal
+    result: Result[Any] = compile_state_cls.orm_execute_statement(
+                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<4 lines>...
+        conn,
+        ^^^^^
+    )
+    ^
+  File "D:\dev\Python\Python314\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "D:\dev\Python\Python314\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "D:\dev\Python\Python314\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\dev\Python\Python314\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "D:\dev\Python\Python314\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\dev\Python\Python314\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\dev\Python\Python314\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "D:\dev\Python\Python314\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+    ~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor, str_statement, effective_parameters, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\dev\Python\Python314\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
+    cursor.execute(statement, parameters)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\dev\Python\Python314\Lib\site-packages\psycopg\cursor.py", line 117, in execute
+    raise ex.with_traceback(None)
+sqlalchemy.exc.OperationalError: (psycopg.OperationalError) consuming input failed: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+[SQL: SELECT "user".email, "user".is_active, "user".is_superuser, "user".full_name, "user".id, "user".hashed_password, "user".created_at 
+FROM "user" 
+WHERE "user".email = %(email_1)s::VARCHAR]
+[parameters: {'email_1': 'admin@example.com'}]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:     127.0.0.1:56265 - "POST /api/v1/login/access-token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56301 - "POST /api/v1/login/test-token HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:56431 - "GET /api/v1/users/?skip=0&limit=5 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:58684 - "GET /api/v1/users/?skip=0&limit=5 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:58716 - "GET /api/v1/users/?skip=0&limit=5 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:50862 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59328 - "POST /api/v1/login/access-token HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59332 - "GET /api/v1/users/?skip=0&limit=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65267 - "GET /api/v1/users/?skip=0&limit=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57406 - "GET /api/v1/users/?skip=0&limit=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55368 - "GET /favicon.ico HTTP/1.1" 404 Not Found
